@@ -2,10 +2,10 @@
 // @name         EasyDownloader
 // @namespace    http://tampermonkey.net/
 // @homepage     https://github.com/maoger/EasyDownloader
-// @version      0.1
+// @version      0.2
 // @description  方便获取所有下载链接，批量下载。
 // @author       Maoger
-// @include      http*://*
+// @include      http*://*6vhao*
 // @require      http://code.jquery.com/jquery-3.2.1.js
 // @updateURL    https://openuserjs.org/meta/maoger/EasyDownloader.meta.js
 
