@@ -1,13 +1,13 @@
 // ==UserScript==
-// @name         EasyDownloader
+// @name         6vDownloader
 // @namespace    http://tampermonkey.net/
-// @homepage     https://github.com/maoger/EasyDownloader
-// @version      0.2
-// @description  方便获取所有下载链接，批量下载。
+// @homepage     https://github.com/maoger/6vDownloader
+// @version      0.3
+// @description  [追剧专用]方便获取所有视频的下载链接，批量下载。
 // @author       Maoger
 // @include      http*://*6vhao*
 // @require      http://code.jquery.com/jquery-3.2.1.js
-// @updateURL    https://openuserjs.org/meta/maoger/EasyDownloader.meta.js
+// @updateURL    https://openuserjs.org/meta/maoger/6vDownloader.meta.js
 
 // ==/UserScript==
 
@@ -17,13 +17,21 @@
     // 定位
     var $DingWei = $("#search");
 
-    // 新建：装载 下载链接 数据的容器
-    var $XunLei_Container = $("<div/>")
-        .html("<br /><hr /><span style='font-size: 16px'>当前页面的所有迅雷下载链接，如下所示；<br />在<b style='color: #ff0000'>打开迅雷</b>的情况下，<b style='color: #ff0000'>复制</b>以下链接即可批量下载。</span><br />");
+    var $hr = $("<div/>")
+        .html("<br /><hr /><br />");
 
+    // 新建：装载“ed2k类型”下载链接数据的容器
+    var $ed2k_Container = $("<div/>")
+        .html("<br /><hr /><span style='font-size: 16px'>当前页面的所有迅雷下载链接，如下所示；<br />在<b style='color: #ff0000'>打开迅雷</b>的情况下，<b style='color: #ff0000'>复制</b>以下链接即可批量下载。<br /><br />[类型1]ed2k类型（电驴）下载链接：</span>");
 
-    // 将 下载链接容器 插入 首页“下载链接”标签后
-    $XunLei_Container.insertAfter($DingWei);
+    $ed2k_Container.insertAfter($DingWei);
+
+    // 新建：装载“magnet类型”下载链接数据的容器
+    var $magnet_Container = $("<div/>")
+        .html("<br /><hr /><span style='font-size: 16px'>[类型2]magnet类型（磁力）下载链接:</span>");
+
+    $magnet_Container.insertAfter($ed2k_Container);
+    $hr.insertAfter($magnet_Container);
 
     // 新建：存放进度条的容器
     var $loadContainer = $("<div/>")
@@ -36,6 +44,7 @@
 
     // 将进度条的容器插入 下载链接容器 和 首页“下载链接”标签 中间
     $loadContainer.insertAfter($DingWei);
+
 
     // 新建：进度条
     var $bar = $("<span/>")
@@ -81,20 +90,23 @@
         },10);
 
         c = hrefArr[i].href;
-        if (c.indexOf("ed2k")>=0){
-            // 构建包裹元素
-            var $elt = $("<table/>")
+
+        // 构建包裹元素
+        var $elt = $("<table/>")
             .addClass("tablebox")
             .css({
                 "text-align": "left"
-            })
-            .html("<span>" + c + "</span>");
-            $XunLei_Container.append($elt);
+            });
+
+        if (c.indexOf("ed2k://")>=0){
+            $elt.html("<span>" + c + "</span>");
+            $ed2k_Container.append($elt);
+        }
+        if (c.indexOf("magnet:?")>=0){
+            $elt.html("<span>" + c + "</span>");
+            $magnet_Container.append($elt);
         }
 
     }
 
-var $hr = $("<div/>")
-    .html("<hr /><br />");
-$XunLei_Container.append($hr);
 })();
