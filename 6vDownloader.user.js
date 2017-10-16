@@ -2,7 +2,7 @@
 // @name         6vDownloader
 // @namespace    http://tampermonkey.net/
 // @homepage     https://github.com/maoger/6vDownloader
-// @version      0.3
+// @version      0.4
 // @description  [追剧专用]方便获取所有视频的下载链接，批量下载。
 // @author       Maoger
 // @include      http*://*6vhao*
@@ -22,13 +22,13 @@
 
     // 新建：装载“ed2k类型”下载链接数据的容器
     var $ed2k_Container = $("<div/>")
-        .html("<br /><hr /><span style='font-size: 16px'>当前页面的所有迅雷下载链接，如下所示；<br />在<b style='color: #ff0000'>打开迅雷</b>的情况下，<b style='color: #ff0000'>复制</b>以下链接即可批量下载。<br /><br />[类型1]ed2k类型（电驴）下载链接：</span>");
+        .html("<br /><hr /><span style='font-size: 16px'>当前页面的所有迅雷下载链接，如下所示；<br />在<b style='color: #ff0000'>打开迅雷</b>的情况下，<b style='color: #ff0000'>复制</b>以下链接即可批量下载。<br /><br />[类型1]ed2k类型（电驴）下载链接：<hr style='height:1px;border:none;border-top:1px dashed #ADADAD;'/></span>");
 
     $ed2k_Container.insertAfter($DingWei);
 
     // 新建：装载“magnet类型”下载链接数据的容器
     var $magnet_Container = $("<div/>")
-        .html("<br /><hr /><span style='font-size: 16px'>[类型2]magnet类型（磁力）下载链接:</span>");
+        .html("<br /><hr /><span style='font-size: 16px'>[类型2]magnet类型（磁力）下载链接:<hr style='height:1px;border:none;border-top:1px dashed #ADADAD;'/></span>");
 
     $magnet_Container.insertAfter($ed2k_Container);
     $hr.insertAfter($magnet_Container);
