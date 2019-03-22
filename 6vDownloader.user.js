@@ -2,10 +2,11 @@
 // @name         6vDownloader
 // @namespace    http://tampermonkey.net/
 // @homepage     https://github.com/maoger/6vDownloader
-// @version      0.4
+// @version      0.5
 // @description  [追剧专用]方便获取所有视频的下载链接，批量下载。
 // @author       Maoger
 // @include      http*://*6vhao*
+// @include      http*://*66*
 // @require      http://code.jquery.com/jquery-3.2.1.js
 // @updateURL    https://openuserjs.org/meta/maoger/6vDownloader.meta.js
 
@@ -15,7 +16,7 @@
     'use strict';
 
     // 定位
-    var $DingWei = $("#search");
+    var $DingWei = $("body");
 
     var $hr = $("<div/>")
         .html("<br /><hr /><br />");
