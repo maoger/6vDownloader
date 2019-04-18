@@ -9,6 +9,7 @@
 // @include      http*://*66s.cc*
 // @require      http://code.jquery.com/jquery-3.2.1.js
 // @updateURL    https://openuserjs.org/meta/maoger/6vDownloader.meta.js
+// @license      MIT
 
 // ==/UserScript==
 
