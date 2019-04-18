@@ -2,7 +2,7 @@
 // @name         6vDownloader
 // @namespace    http://tampermonkey.net/
 // @homepage     https://github.com/maoger/6vDownloader
-// @version      0.5
+// @version      0.5.1
 // @description  [追剧专用]方便获取所有视频的下载链接，批量下载。
 // @author       Maoger
 // @include      http*://*6vhao*
