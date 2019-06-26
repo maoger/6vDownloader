@@ -1,12 +1,11 @@
 // ==UserScript==
 // @name         6vDownloader
-// @namespace    http://tampermonkey.net/
 // @homepage     https://github.com/maoger/6vDownloader
-// @version      0.5.1
+// @version      0.6
 // @description  [追剧专用]方便获取所有视频的下载链接，批量下载。
 // @author       Maoger
-// @include      http*://*6vhao*
-// @include      http*://*66s.cc*
+// @match        http*://*.6vhao.tv/*
+// @match        http*://*.66s.cc/*
 // @require      http://code.jquery.com/jquery-3.2.1.js
 // @updateURL    https://openuserjs.org/meta/maoger/6vDownloader.meta.js
 // @license      MIT
