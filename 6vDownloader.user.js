@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         6vDownloader
 // @homepage     https://github.com/maoger/6vDownloader
-// @version      0.7.200222
+// @version      0.8
 // @description  [追剧专用]方便获取所有视频的下载链接，批量下载。
 // @author       Maoger
 // @match        http*://*.6vhao.tv/*
 // @match        http*://*.66s.cc/*
 // @match        http*://*.6vgood.com/*
-// @require      http://code.jquery.com/jquery-3.4.1.min.js
+// @require      https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js
 // @updateURL    https://openuserjs.org/meta/maoger/6vDownloader.meta.js
 // @copyright    2019-2020, maoger (https://openuserjs.org/users/maoger)
 // @license      MIT
